@@ -1,13 +1,10 @@
 "use client";
 
 import "./globals.css";
-import { useMemo } from "react";
-import { clusterApiUrl } from "@solana/web3.js";
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   WalletModalProvider,
 } from "@solana/wallet-adapter-react-ui";
@@ -24,9 +21,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <SphereProvider
-              paymentLinkId="paymentLink_0b603ecd8b3d4b5e819076cfc7618cc8"
+              paymentLinkId="paymentLink_6d19b52de8eb4aa69ce0310b5b561251"
               apiOrigin="https://api.staging.spherepay.co"
-              
             >
               <body>{children}</body>
             </SphereProvider>

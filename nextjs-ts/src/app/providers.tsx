@@ -16,8 +16,7 @@ import { SphereProvider } from "@spherelabs/react";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const network = WalletAdapterNetwork.Mainnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  const endpoint = "https://rpc.helius.xyz/?api-key=5b61f350-4c99-4f81-8331-246906ba53dc;"
 
   return (
     <html lang="en">
@@ -27,6 +26,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
             <SphereProvider
               paymentLinkId="paymentLink_0b603ecd8b3d4b5e819076cfc7618cc8"
               apiOrigin="https://api.staging.spherepay.co"
+              
             >
               <body>{children}</body>
             </SphereProvider>

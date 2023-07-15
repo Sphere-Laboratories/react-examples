@@ -12,12 +12,14 @@ export const styles = {
 
 
 export default function Home() {
-  const { setLineItemQuantity, lineItems, pay, subtotal, discount } = useSphere();
+  const { setLineItemQuantity, lineItems, pay, subtotal, discount } =
+    useSphere();
 
   console.log({
     lineItems,
     subtotal,
     discount,
+    pay,
   });
 
   return (

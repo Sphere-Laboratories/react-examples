@@ -13,7 +13,7 @@ import { SphereProvider } from "@spherelabs/react";
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  const endpoint = "https://rpc.helius.xyz/?api-key=5b61f350-4c99-4f81-8331-246906ba53dc;"
+  const endpoint = "https://rpc.helius.xyz/?api-key=5b61f350-4c99-4f81-8331-246906ba53dc"
 
   return (
     <html lang="en">

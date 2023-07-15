@@ -1135,14 +1135,15 @@
     eventemitter3 "^5.0.1"
     uuid "^9.0.0"
 
-"@spherelabs/react@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@spherelabs/react/-/react-0.1.6.tgz#85cb1d96435d14715135d96521aa0097cef95581"
-  integrity sha512-rHPb3qNj3PQHmEegX7FqZ112QxGqsuJg4WdalT3vplToT9Scaq9G+k0yKTvYa7uxQYdpThQi/PmAgIa2cCziJA==
+"@spherelabs/react@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@spherelabs/react/-/react-0.1.7.tgz#ad2ce503714728d0475fe2fe33a95a75e7cb8351"
+  integrity sha512-b9S/NXKMRC62eMReBbH6MWWEh1GUfS6iDzGXRRwALOsd+wcCAbf0ebvIkDLY0fFGWiIcZtWGMxTQcuZWYnlh5Q==
   dependencies:
     "@headlessui/react" "^1.7.14"
     "@solana/pay" "^0.2.5"
     "@solana/spl-token" "^0.3.7"
+    bs58 "^5.0.0"
     buffer "^6.0.3"
     canvas-confetti "^1.6.0"
     decimal.js "^10.4.3"

@@ -46,7 +46,10 @@ export default function Home() {
       }}>
       </input>
       <button
-        onClick={pay}
+        onClick={async () => {
+          const txId = await pay();
+          console.log(txId);
+        }}
         className={styles.button}
       >
         Pay

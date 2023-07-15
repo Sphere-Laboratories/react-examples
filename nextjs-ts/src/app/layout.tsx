@@ -31,7 +31,6 @@ export default function RootLayout({children}: {
                   <WalletMultiButton />
                   <WalletDisconnectButton />
                     <body>{children}</body>
-                  { children }
               </WalletModalProvider>
           </WalletProvider>
       </ConnectionProvider>

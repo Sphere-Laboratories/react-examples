@@ -10,8 +10,6 @@ import {
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
 import { SphereProvider } from "@spherelabs/react";
 
@@ -26,8 +24,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
-            <WalletMultiButton />
-            <WalletDisconnectButton />
             <SphereProvider
               paymentLinkId="paymentLink_0b603ecd8b3d4b5e819076cfc7618cc8"
               apiOrigin="https://api.staging.spherepay.co"

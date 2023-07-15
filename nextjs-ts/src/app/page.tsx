@@ -3,36 +3,32 @@
 import Image from "next/image";
 import { useSphere } from "@spherelabs/react";
 import { WalletDisconnectButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useState } from "react";
 
 export const styles = {
-  main: "flex min-h-screen flex-col gap-y-4 p-24",
-  button: "items-center w-[250px] bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-md hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95",
+  main: "flex min-h-screen flex-col gap-y-4 p-24 items-center",
+  button: "items-center w-[250px] bg-indigo-600 px-4 py-3 text-center text-sm font-semibold inline-block text-white cursor-pointer uppercase transition duration-200 ease-in-out rounded-lg hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 active:scale-95",
+  input: "border-[2px] border-[#E4EBFF] rounded-md",
   subtotal: "text-[#0F2A43]"
 }
 
 
 export default function Home() {
+  const { connected } = useWallet()
   const { setLineItemQuantity, lineItems, pay, subtotal, discount } =
     useSphere();
 
-  console.log({
-    lineItems,
-    subtotal,
-    discount,
-    pay,
-  });
+  if (!connected || !lineItems) {
+    return (
+      <main className={styles.main}>
+        <WalletMultiButton className={styles.button}/>
+      </main>
+    );
+  }
 
   return (
     <main className={styles.main}>
-      <WalletMultiButton />
-      <div className={styles.subtotal}>
-        Currency: {lineItems && lineItems[0]?.price?.currency}
-      </div>
-      <div className={styles.subtotal}>
-        LineItems: <br/>{lineItems && lineItems.map((lineItem) => {
-          return (<div key={lineItem.id}>{lineItem.id}</div>)
-        })}
-      </div>
       <div className={styles.subtotal}>
         Tax: {subtotal?.totalTaxFormatted}
       </div>
@@ -42,6 +38,13 @@ export default function Home() {
       <div className={styles.subtotal}>
         Total: {subtotal?.rawAmountWithTaxAndFeesFormatted}
       </div>
+      <div className={styles.subtotal}>
+        NFT Discount: {discount?.nft ? JSON.stringify(discount.nft) : "None"}
+      </div>
+      <input className={styles.input} onChange={(e) => {
+        setLineItemQuantity(parseInt(e.target.value), lineItems[0].id);
+      }}>
+      </input>
       <button
         onClick={pay}
         className={styles.button}

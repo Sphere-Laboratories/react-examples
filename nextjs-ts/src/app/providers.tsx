@@ -22,7 +22,6 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           <WalletModalProvider>
             <SphereProvider
               paymentLinkId="paymentLink_6d19b52de8eb4aa69ce0310b5b561251"
-              apiOrigin="https://api.staging.spherepay.co"
             >
               <body>{children}</body>
             </SphereProvider>

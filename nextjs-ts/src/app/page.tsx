@@ -36,7 +36,7 @@ export default function Home() {
        Fees : {subtotal?.totalFeeFormatted}
       </div>
       <div className={styles.subtotal}>
-        Total: {subtotal?.rawAmountWithTaxAndFeesFormatted}
+        Total: {subtotal?.rawAmountWithTaxAndFeesFormatted} {lineItems[0].price.currency}
       </div>
       <div className={styles.subtotal}>
         NFT Discount: {discount?.nft ? JSON.stringify(discount.nft) : "None"}

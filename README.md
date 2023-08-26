@@ -17,4 +17,4 @@ The following repository contains examples usages of Sphere's react-sdk.
 
 ## Examples
 
-- nestjs-ts
+- nextjs-ts
